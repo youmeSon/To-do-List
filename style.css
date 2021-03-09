@@ -1,14 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: aliceblue;
+  margin: 0;
 }
 
 li {
   list-style: none;
 }
 
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
 .container {
   width: 300px;
-  height: 500px;
+
   margin: auto;
   margin-top: 50px;
 
@@ -35,6 +46,8 @@ li {
 
 .items {
   padding: 30px;
+  height: 300px;
+  overflow-y: auto;
 }
 
 .item-row {
@@ -50,4 +63,35 @@ li {
   width: 100%;
   height: 1px;
   background-color: rgb(54, 53, 53);
+}
+
+.addOn {
+  padding: 0;
+  margin: 0;
+  background: rgb(70, 66, 131);
+  background: linear-gradient(
+    36deg,
+    rgba(70, 66, 131, 1) 0%,
+    rgba(191, 127, 151, 1) 53%,
+    rgba(200, 205, 207, 1) 88%
+  );
+  border-radius: 0 0 15px 15px;
+}
+
+.footer__input {
+  width: 100%;
+  height: 32px;
+  border: none;
+  outline: none;
+  padding-left: 10px;
+}
+
+.footer__btn {
+  width: 36px;
+  height: 36px;
+  background-color: rgb(221, 211, 211, 0.7);
+  padding: 5px;
+  margin: auto;
+  font-size: 24px;
+  border-radius: 50%;
 }
