@@ -11,22 +11,26 @@ function onAdd() {
   const text = input.value;
   const item = createItem(text);
   items.appendChild(item);
+  item.scrollIntoView({block: "center", behavior: "smooth"});
   input.value = '';
   input.focus();
 }
 
+let id = 0;
 function createItem(text) {
   const itemRow = document.createElement('li');
   itemRow.setAttribute('class', 'item-row');
+  itemRow.setAttribute('data-id', id);
   itemRow.innerHTML = `
   <div class="item">
     <span class="item__description">${text}</span>
     <button class="item__delete">
-      <i class="fas fa-trash-alt"></i>
+      <i class="fas fa-trash-alt" data-id="${id}"></i>
     </button>
   </div>
   <div class="line"></div>
   `;
+  id++;
   return itemRow;
 }
 
@@ -39,4 +43,13 @@ input.addEventListener('keydown', e => {
     onAdd();
   }
 });
+
+items.addEventListener('click', event => {
+  const id = event.target.dataset.id;
+  if(id) {
+    const toBeDeleted = document.querySelector(`.item-row[data-id="${id}"]`);
+    toBeDeleted.remove();
+  }
+})
+
 

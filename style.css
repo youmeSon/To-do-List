@@ -51,13 +51,10 @@ button {
   overflow-y: auto;
 }
 
-.item-row {
-  padding: 10px;
-}
-
 .item {
   display: flex;
   justify-content: space-between;
+  padding: 8px 32px;
 }
 
 .item__delete {
@@ -72,10 +69,10 @@ button {
 }
 
 .line {
-  margin: 5px;
-  width: 100%;
+  width: 90%;
   height: 1px;
-  background-color: rgb(119, 117, 117);
+  margin: auto;
+  background-color: lightgray;
 }
 
 .addOn {
